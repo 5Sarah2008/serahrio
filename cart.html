@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serahrio Cart</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f8f8;
+            font-family: 'Ubuntu', sans-serif;
+        }
+        .navbar {
+            background-color: #ffb3c1; /* Light pink background */
+        }
+        .navbar-brand {
+            font-family: 'Lobster', cursive;
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%; /* Circular shape */
+        }
+        .form-container {
+            margin: 30px auto;
+            max-width: 600px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            border-radius: 0.5rem;
+            border: none; /* Remove borders */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        input:focus {
+            outline: none; /* Remove outline on focus */
+            box-shadow: 0 0 0 2px #FF69B4; /* Pink outline */
+        }
+        button {
+            background-color: #FF69B4; /* Pink */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #FF1493; /* Darker pink */
+        }
+        .confirmation-message {
+            margin-top: 20px;
+            color: green;
+        }
+        footer {
+            background-color: #c7003b;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .footer-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.footer-list a {
+    color: #ffdbdb; /* Change to a soft pink color for the links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.footer-list a:hover {
+    color: #fff; /* Change to white on hover */
+    background-color: rgba(255, 255, 255, 0.2); /* Add a subtle background */
+    border-radius: 5px; /* Slightly round the corners */
+    padding: 5px; /* Add some padding for a better look */
+}
+
+.footer-list li {
+    margin: 5px 0; /* Margin between list items */
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-bar input {
+    border: 2px solid #ffb3c1;
+    border-radius: 20px;
+    padding: 10px;
+    transition: width 0.4s ease, border-color 0.4s ease; /* Animation for width and border color */
+    width: 200px; /* Initial width */
+    margin-right: 10px;
+}
+
+.search-bar input:focus {
+    width: 300px; /* Width expands on focus */
+    border-color: #d81b60; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.search-bar button {
+    border-radius: 20px;
+    transition: transform 0.3s ease; /* Animation for scale */
+}
+
+.search-bar button:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">
+        <img src="https://i.pinimg.com/236x/5b/c2/f7/5bc2f787b8a5c478e455b3e1ad5fe0b1.jpg" alt="Serahrio Logo" class="logo">
+        Serahrio
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <form class="form-inline" action="products.html" method="GET">
+                    <input class="form-control" type="search" placeholder="Search for a product" aria-label="Search" name="query">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="cart.html">Cart</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Form Container -->
+<div class="form-container">
+    <form id="orderForm">
+        <!-- User Details -->
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+      
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" placeholder="Enter your location" required>
+        </div>
+      
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" pattern="971\d{9}" placeholder="+971504621411" required>
+        </div>
+
+        <!-- Selected Products -->
+        <div id="selectedProducts">
+          <!-- Selected products and quantity will be displayed here -->
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit Order</button>
+    </form>
+</div>
+
+<!-- Confirmation Message -->
+<div id="confirmation" class="confirmation-message" style="display: none;">
+    <h4>Order Confirmed!</h4>
+    <p>Name: <span id="confirmName"></span></p>
+    <p>Phone: <span id="confirmPhone"></span></p>
+    <p>Location: <span id="confirmLocation"></span></p>
+    <p>Products: <span id="confirmProducts"></span></p>
+    <p>Quantity: <span id="confirmQuantity"></span></p>
+</div>
+
+<footer class="footer-custom text-center">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-4">
+              <h4 class="footer-title">Contact Us</h4>
+              <ul class="footer-list">
+                  <li><a href="mailto:sarah.manathil@gmail.com">Email: sarah.manathil@gmail.com</a></li>
+                  <li>Phone: +971504621411</li>
+              </ul>
+          </div>
+          <div class="col-md-4">
+              <h4 class="footer-title">Quick Links</h4>
+              <ul class="footer-list">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="products.html">Products</a></li>
+                  <li><a href="faq.html">FAQ</a></li>
+                  <li><a href="cart.html">Cart</a></li>
+              </ul>
+          </div>
+          <div class="col-md-4">
+              <h4 class="footer-title">Follow Us</h4>
+              <ul class="footer-list">
+                  <li><a href="#">Instagram</a></li>
+                  <li><a href="#">Facebook</a></li>
+                  <li><a href="#">Twitter</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
+  <p class="mt-4">&copy; 2024 Serahrio. All Rights Reserved.</p>
+</footer>
+
+<script>
+    const products = [
+      // List of 38 products
+      { id: 1, name: 'Product 1' },
+      { id: 2, name: 'Product 2' },
+      // Add all products here
+    ];
+
+    const selectedProducts = [];
+
+    // Function to select a product and add it to the selectedProducts list
+    function selectProduct(product) {
+        if (!selectedProducts.some(p => p.id === product.id)) {
+            const productDiv = document.createElement('div');
+            productDiv.className = 'selected-product';
+            productDiv.innerHTML = `
+                <label>${product.name}</label>
+                <input type="number" placeholder="Quantity" min="1" value="1" data-id="${product.id}">
+            `;
+            document.getElementById('selectedProducts').appendChild(productDiv);
+            selectedProducts.push(product);
+        }
+    }
+
+    // Function to send form data via EmailJS
+    document.getElementById('orderForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const formData = {
+            name: document.getElementById('name').value,
+            location: document.getElementById('location').value,
+            phone: document.getElementById('phone').value,
+            products: selectedProducts.map(p => ({
+                id: p.id,
+                name: p.name,
+                quantity: document.querySelector(`input[data-id="${p.id}"]`).value
+            }))
+        };
+
+        emailjs.send('service_p5813xh', 'template_sfmlco6', formData)
+            .then(response => {
+                alert('Order sent successfully!');
+            }, error => {
+                alert('Failed to send order.');
+            });
+    });
+
+</script>
+
+</body>
+</html>

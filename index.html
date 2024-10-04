@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serahrio - Fashion, Fun, and Flawless Finds</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&family=Lobster&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f8f8;
+            font-family: 'Ubuntu', sans-serif;
+        }
+        .navbar {
+            background-color: #ffb3c1;
+            margin-bottom: 20px;
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-family: 'Lobster', cursive;
+            font-size: 24px;
+        }
+        .navbar-brand img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .slogan-bg {
+            background-image: url('https://static.vecteezy.com/system/resources/previews/013/507/536/non_2x/pink-background-with-stars-cute-baby-print-for-craft-paper-textile-fabric-cards-invitations-wallpapers-and-etc-free-vector.jpg');
+            background-size: cover; /* Cover to fit the section */
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        .slogan {
+            font-size: 36px;
+            font-family: 'Bebas Neue', sans-serif;
+            margin-bottom: 20px;
+        }
+        .product-card {
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .btn-pink {
+            background-color: #d81b60;
+            color: white;
+            border: none;
+            transition: transform 0.3s ease;
+        }
+        .btn-pink:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: #c7003b;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .footer-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.footer-list a {
+    color: #ffdbdb; /* Change to a soft pink color for the links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.footer-list a:hover {
+    color: #fff; /* Change to white on hover */
+    background-color: rgba(255, 255, 255, 0.2); /* Add a subtle background */
+    border-radius: 5px; /* Slightly round the corners */
+    padding: 5px; /* Add some padding for a better look */
+}
+
+.footer-list li {
+    margin: 5px 0; /* Margin between list items */
+}
+
+        h2 {
+            font-family: 'Lobster', cursive;
+            margin-bottom: 30px;
+        }
+        .search-bar {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-bar input {
+    border: 2px solid #ffb3c1;
+    border-radius: 20px;
+    padding: 10px;
+    transition: width 0.4s ease, border-color 0.4s ease; /* Animation for width and border color */
+    width: 200px; /* Initial width */
+    margin-right: 10px;
+}
+
+.search-bar input:focus {
+    width: 300px; /* Width expands on focus */
+    border-color: #d81b60; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.search-bar button {
+    border-radius: 20px;
+    transition: transform 0.3s ease; /* Animation for scale */
+}
+
+.search-bar button:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">
+        <img src="https://i.pinimg.com/236x/5b/c2/f7/5bc2f787b8a5c478e455b3e1ad5fe0b1.jpg" alt="Serahrio Logo" class="logo">
+        Serahrio
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="cart.html">Cart</a>
+            </li>
+            <li class="nav-item">
+                <form class="search-bar" action="products.html" method="GET">
+                    <input class="form-control" type="search" placeholder="Search for a product" aria-label="Search" name="query" required>
+                    <button class="btn btn-pink" type="submit">Search</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Slogan Section -->
+<section class="slogan-bg">
+    <h1>Welcome to Serahrio!</h1>
+    <h2 class="slogan" id="slogan">Fashion, Fun, and Flawless Finds</h2>
+</section>
+
+<!-- Products Section -->
+<main class="container">
+    <h2>Featured Products</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/1.jpg" class="img-fluid" alt="Product 1">
+                <h5>Product 1</h5>
+                <p>Description of Product 1</p>
+                <p>Price: $29.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 1', 'Description of Product 1', '$29.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/2.jpg" class="img-fluid" alt="Product 2">
+                <h5>Product 2</h5>
+                <p>Description of Product 2</p>
+                <p>Price: $39.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 2', 'Description of Product 2', '$39.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/3.jpg" class="img-fluid" alt="Product 3">
+                <h5>Product 3</h5>
+                <p>Description of Product 3</p>
+                <p>Price: $24.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 3', 'Description of Product 3', '$24.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/4.jpg" class="img-fluid" alt="Product 4">
+                <h5>Product 4</h5>
+                <p>Description of Product 4</p>
+                <p>Price: $34.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 4', 'Description of Product 4', '$34.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/5.jpg" class="img-fluid" alt="Product 5">
+                <h5>Product 5</h5>
+                <p>Description of Product 5</p>
+                <p>Price: $19.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 5', 'Description of Product 5', '$19.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/6.jpg" class="img-fluid" alt="Product 6">
+                <h5>Product 6</h5>
+                <p>Description of Product 6</p>
+                <p>Price: $29.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 6', 'Description of Product 6', '$29.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer-custom text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h4 class="footer-title">Contact Us</h4>
+                <ul class="footer-list">
+                    <li><a href="mailto:sarah.manathil@gmail.com">Email: sarah.manathil@gmail.com</a></li>
+                    <li>Phone: +971504621411</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4 class="footer-title">Follow Us</h4>
+                <ul class="footer-list">
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <p class="mt-4">&copy; 2024 Serahrio. All Rights Reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

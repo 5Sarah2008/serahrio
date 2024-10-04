@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serahrio - Fashion, Fun, and Flawless Finds</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&family=Lobster&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f8f8;
+            font-family: 'Ubuntu', sans-serif;
+        }
+        .navbar {
+            background-color: #ffb3c1;
+            margin-bottom: 20px;
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-family: 'Lobster', cursive;
+            font-size: 24px;
+        }
+        .navbar-brand img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .slogan-bg {
+            background-image: url('https://static.vecteezy.com/system/resources/previews/013/507/536/non_2x/pink-background-with-stars-cute-baby-print-for-craft-paper-textile-fabric-cards-invitations-wallpapers-and-etc-free-vector.jpg');
+            background-size: cover; /* Cover to fit the section */
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        .slogan {
+            font-size: 36px;
+            font-family: 'Bebas Neue', sans-serif;
+            margin-bottom: 20px;
+        }
+        .product-card {
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .btn-pink {
+            background-color: #d81b60;
+            color: white;
+            border: none;
+            transition: transform 0.3s ease;
+        }
+        .btn-pink:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: #c7003b;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .footer-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.footer-list a {
+    color: #ffdbdb; /* Change to a soft pink color for the links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.footer-list a:hover {
+    color: #fff; /* Change to white on hover */
+    background-color: rgba(255, 255, 255, 0.2); /* Add a subtle background */
+    border-radius: 5px; /* Slightly round the corners */
+    padding: 5px; /* Add some padding for a better look */
+}
+
+.footer-list li {
+    margin: 5px 0; /* Margin between list items */
+}
+        h2 {
+            font-family: 'Lobster', cursive;
+            margin-bottom: 30px;
+        }
+
+        .search-bar {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-bar input {
+    border: 2px solid #ffb3c1;
+    border-radius: 20px;
+    padding: 10px;
+    transition: width 0.4s ease, border-color 0.4s ease; /* Animation for width and border color */
+    width: 200px; /* Initial width */
+    margin-right: 10px;
+}
+
+.search-bar input:focus {
+    width: 300px; /* Width expands on focus */
+    border-color: #d81b60; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.search-bar button {
+    border-radius: 20px;
+    transition: transform 0.3s ease; /* Animation for scale */
+}
+
+.search-bar button:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">
+        <img src="https://i.pinimg.com/236x/5b/c2/f7/5bc2f787b8a5c478e455b3e1ad5fe0b1.jpg" alt="Serahrio Logo" class="logo">
+        Serahrio
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="cart.html">Cart</a>
+            </li>
+            <li class="nav-item">
+                <form class="search-bar" action="products.html" method="GET">
+                    <input class="form-control" type="search" placeholder="Search for a product" aria-label="Search" name="query" required>
+                    <button class="btn btn-pink" type="submit">Search</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Slogan Section -->
+<section class="slogan-bg">
+    <h1>Welcome to Serahrio!</h1>
+    <h2 class="slogan" id="slogan">Fashion, Fun, and Flawless Finds</h2>
+</section>
+
+<!-- Products Section -->
+<main class="container">
+    <h2>Featured Products</h2>
+    <div class="row">
+        <!-- Product Cards -->
+        <!-- Each product card below uses the same structure -->
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/1.jpg" class="img-fluid" alt="Product 1">
+                <h5>Product 1</h5>
+                <p>Description of Product 1</p>
+                <p>Price: $19.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 1', 'Description of Product 1', '$19.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/2.jpg" class="img-fluid" alt="Product 2">
+                <h5>Product 2</h5>
+                <p>Description of Product 2</p>
+                <p>Price: $29.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 2', 'Description of Product 2', '$29.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/3.jpg" class="img-fluid" alt="Product 3">
+                <h5>Product 3</h5>
+                <p>Description of Product 3</p>
+                <p>Price: $39.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 3', 'Description of Product 3', '$39.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/4.jpg" class="img-fluid" alt="Product 4">
+                <h5>Product 4</h5>
+                <p>Description of Product 4</p>
+                <p>Price: $24.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 4', 'Description of Product 4', '$24.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/5.jpg" class="img-fluid" alt="Product 5">
+                <h5>Product 5</h5>
+                <p>Description of Product 5</p>
+                <p>Price: $34.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 5', 'Description of Product 5', '$34.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/6.jpg" class="img-fluid" alt="Product 6">
+                <h5>Product 6</h5>
+                <p>Description of Product 6</p>
+                <p>Price: $19.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 6', 'Description of Product 6', '$19.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/7.jpg" class="img-fluid" alt="Product 7">
+                <h5>Product 7</h5>
+                <p>Description of Product 7</p>
+                <p>Price: $29.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 7', 'Description of Product 7', '$29.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/8.jpg" class="img-fluid" alt="Product 8">
+                <h5>Product 8</h5>
+                <p>Description of Product 8</p>
+                <p>Price: $39.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 8', 'Description of Product 8', '$39.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/9.jpg" class="img-fluid" alt="Product 9">
+                <h5>Product 9</h5>
+                <p>Description of Product 9</p>
+                <p>Price: $24.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 9', 'Description of Product 9', '$24.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/10.jpg" class="img-fluid" alt="Product 10">
+                <h5>Product 10</h5>
+                <p>Description of Product 10</p>
+                <p>Price: $34.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 10', 'Description of Product 10', '$34.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/11.jpg" class="img-fluid" alt="Product 11">
+                <h5>Product 11</h5>
+                <p>Description of Product 11</p>
+                <p>Price: $19.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 11', 'Description of Product 11', '$19.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/12.jpg" class="img-fluid" alt="Product 12">
+                <h5>Product 12</h5>
+                <p>Description of Product 12</p>
+                <p>Price: $29.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 12', 'Description of Product 12', '$29.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/13.jpg" class="img-fluid" alt="Product 13">
+                <h5>Product 13</h5>
+                <p>Description of Product 13</p>
+                <p>Price: $39.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 13', 'Description of Product 13', '$39.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/14.jpg" class="img-fluid" alt="Product 14">
+                <h5>Product 14</h5>
+                <p>Description of Product 14</p>
+                <p>Price: $24.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 14', 'Description of Product 14', '$24.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/15.jpg" class="img-fluid" alt="Product 15">
+                <h5>Product 15</h5>
+                <p>Description of Product 15</p>
+                <p>Price: $34.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 15', 'Description of Product 15', '$34.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/16.jpg" class="img-fluid" alt="Product 16">
+                <h5>Product 16</h5>
+                <p>Description of Product 16</p>
+                <p>Price: $19.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 16', 'Description of Product 16', '$19.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/17.jpg" class="img-fluid" alt="Product 17">
+                <h5>Product 17</h5>
+                <p>Description of Product 17</p>
+                <p>Price: $29.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 17', 'Description of Product 17', '$29.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/18.jpg" class="img-fluid" alt="Product 18">
+                <h5>Product 18</h5>
+                <p>Description of Product 18</p>
+                <p>Price: $39.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 18', 'Description of Product 18', '$39.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/19.jpg" class="img-fluid" alt="Product 19">
+                <h5>Product 19</h5>
+                <p>Description of Product 19</p>
+                <p>Price: $24.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 19', 'Description of Product 19', '$24.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/20.jpg" class="img-fluid" alt="Product 20">
+                <h5>Product 20</h5>
+                <p>Description of Product 20</p>
+                <p>Price: $34.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 20', 'Description of Product 20', '$34.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/21.jpg" class="img-fluid" alt="Product 21">
+                <h5>Product 21</h5>
+                <p>Description of Product 21</p>
+                <p>Price: $19.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 21', 'Description of Product 21', '$19.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/22.jpg" class="img-fluid" alt="Product 22">
+                <h5>Product 22</h5>
+                <p>Description of Product 22</p>
+                <p>Price: $29.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 22', 'Description of Product 22', '$29.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/23.jpg" class="img-fluid" alt="Product 23">
+                <h5>Product 23</h5>
+                <p>Description of Product 23</p>
+                <p>Price: $39.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 23', 'Description of Product 23', '$39.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/24.jpg" class="img-fluid" alt="Product 24">
+                <h5>Product 24</h5>
+                <p>Description of Product 24</p>
+                <p>Price: $24.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 24', 'Description of Product 24', '$24.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/25.jpg" class="img-fluid" alt="Product 25">
+                <h5>Product 25</h5>
+                <p>Description of Product 25</p>
+                <p>Price: $34.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 25', 'Description of Product 25', '$34.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/26.jpg" class="img-fluid" alt="Product 26">
+                <h5>Product 26</h5>
+                <p>Description of Product 26</p>
+                <p>Price: $19.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 26', 'Description of Product 26', '$19.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/27.jpg" class="img-fluid" alt="Product 27">
+                <h5>Product 27</h5>
+                <p>Description of Product 27</p>
+                <p>Price: $29.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 27', 'Description of Product 27', '$29.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/28.jpg" class="img-fluid" alt="Product 28">
+                <h5>Product 28</h5>
+                <p>Description of Product 28</p>
+                <p>Price: $39.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 28', 'Description of Product 28', '$39.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/29.jpg" class="img-fluid" alt="Product 29">
+                <h5>Product 29</h5>
+                <p>Description of Product 29</p>
+                <p>Price: $24.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 29', 'Description of Product 29', '$24.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/30.jpg" class="img-fluid" alt="Product 30">
+                <h5>Product 30</h5>
+                <p>Description of Product 30</p>
+                <p>Price: $34.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 30', 'Description of Product 30', '$34.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/31.jpg" class="img-fluid" alt="Product 31">
+                <h5>Product 31</h5>
+                <p>Description of Product 31</p>
+                <p>Price: $19.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 31', 'Description of Product 31', '$19.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/32.jpg" class="img-fluid" alt="Product 32">
+                <h5>Product 32</h5>
+                <p>Description of Product 32</p>
+                <p>Price: $29.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 32', 'Description of Product 32', '$29.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/33.jpg" class="img-fluid" alt="Product 33">
+                <h5>Product 33</h5>
+                <p>Description of Product 33</p>
+                <p>Price: $39.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 33', 'Description of Product 33', '$39.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/34.jpg" class="img-fluid" alt="Product 34">
+                <h5>Product 34</h5>
+                <p>Description of Product 34</p>
+                <p>Price: $24.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 34', 'Description of Product 34', '$24.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/35.jpg" class="img-fluid" alt="Product 35">
+                <h5>Product 35</h5>
+                <p>Description of Product 35</p>
+                <p>Price: $34.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 35', 'Description of Product 35', '$34.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/36.jpg" class="img-fluid" alt="Product 36">
+                <h5>Product 36</h5>
+                <p>Description of Product 36</p>
+                <p>Price: $19.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 36', 'Description of Product 36', '$19.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/37.jpg" class="img-fluid" alt="Product 37">
+                <h5>Product 37</h5>
+                <p>Description of Product 37</p>
+                <p>Price: $29.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 37', 'Description of Product 37', '$29.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/38.jpg" class="img-fluid" alt="Product 38">
+                <h5>Product 38</h5>
+                <p>Description of Product 38</p>
+                <p>Price: $39.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 38', 'Description of Product 38', '$39.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/39.jpg" class="img-fluid" alt="Product 39">
+                <h5>Product 39</h5>
+                <p>Description of Product 39</p>
+                <p>Price: $24.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 39', 'Description of Product 39', '$24.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/40.jpg" class="img-fluid" alt="Product 40">
+                <h5>Product 40</h5>
+                <p>Description of Product 40</p>
+                <p>Price: $34.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 40', 'Description of Product 40', '$34.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/41.jpg" class="img-fluid" alt="Product 41">
+                <h5>Product 41</h5>
+                <p>Description of Product 41</p>
+                <p>Price: $19.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 41', 'Description of Product 41', '$19.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/42.jpg" class="img-fluid" alt="Product 42">
+                <h5>Product 42</h5>
+                <p>Description of Product 42</p>
+                <p>Price: $29.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 42', 'Description of Product 42', '$29.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/43.jpg" class="img-fluid" alt="Product 43">
+                <h5>Product 43</h5>
+                <p>Description of Product 43</p>
+                <p>Price: $39.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 43', 'Description of Product 43', '$39.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/44.jpg" class="img-fluid" alt="Product 44">
+                <h5>Product 44</h5>
+                <p>Description of Product 44</p>
+                <p>Price: $24.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 44', 'Description of Product 44', '$24.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="img/45.jpg" class="img-fluid" alt="Product 45">
+                <h5>Product 45</h5>
+                <p>Description of Product 45</p>
+                <p>Price: $34.99</p>
+                <button class="btn btn-pink" onclick="showModal('Product 45', 'Description of Product 45', '$34.99')">View Details</button>
+                <button class="btn btn-pink">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer-custom text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h4 class="footer-title">Contact Us</h4>
+                <ul class="footer-list">
+                    <li><a href="mailto:sarah.manathil@gmail.com">Email: sarah.manathil@gmail.com</a></li>
+                    <li>Phone: +971504621411</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4 class="footer-title">Follow Us</h4>
+                <ul class="footer-list">
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <p class="mt-4">&copy; 2024 Serahrio. All Rights Reserved.</p>
+</footer>
+
+<!-- Add Bootstrap JavaScript (optional, for modal functionality) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Add your custom JavaScript here -->
+<script>
+    function showModal(title, description, price) {
+        // Create the modal content
+        var modalContent = '<div class="modal-header">' +
+            '<h5 class="modal-title">' + title + '</h5>' +
+            '<button type="button" class="close" data-dismiss="modal">&times;</button>' +
+            '</div>' +
+            '<div class="modal-body">' +
+            '<p>' + description + '</p>' +
+            '<p>Price: ' + price + '</p>' +
+            '</div>' +
+            '<div class="modal-footer">' +
+            '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>' +
+            '<button type="button" class="btn btn-pink">Add to Cart</button>' +
+            '</div>';
+
+        // Create the modal element
+        var modal = $('<div class="modal fade" tabindex="-1" role="dialog"></div>');
+        modal.append('<div class="modal-dialog" role="document"><div class="modal-content">' + modalContent + '</div></div>');
+        
+        // Append the modal to the body
+        $('body').append(modal);
+        // Show the modal
+        modal.modal('show');
+
+        // Remove modal from DOM after hiding
+        modal.on('hidden.bs.modal', function () {
+            modal.remove();
+        });
+    }
+</script>
+
+</body>
+</html>
